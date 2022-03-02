@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -15,8 +15,7 @@
     <!-- 配置注解驱动 -->
     <mvc:annotation-driven></mvc:annotation-driven>
 
-<!--    <mvc:default-servlet-handler/>-->
-
+    <!--<mvc:default-servlet-handler/>-->
 
 
     <mvc:interceptors>
@@ -34,7 +33,7 @@
     </bean>
 
 
-<!--    <bean class="com.mashibing.controller.exception.MyExceptionHandlerExceptionResolver">-->
-<!--        <property name="order" value="-1"></property>-->
-<!--    </bean>-->
+    <!--    <bean class="com.mashibing.controller.exception.MyExceptionHandlerExceptionResolver">-->
+    <!--        <property name="order" value="-1"></property>-->
+    <!--    </bean>-->
 </beans>
