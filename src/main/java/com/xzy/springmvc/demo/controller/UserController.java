@@ -20,12 +20,13 @@ import java.util.Date;
 @RequestMapping("user")
 public class UserController {
     
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        CustomDateEditor dateEditor = new CustomDateEditor(df, true);
-        binder.registerCustomEditor(Date.class, dateEditor);
-    }
+    // @InitBinder
+    // public void initBinder(WebDataBinder binder) {
+    //     DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    //     CustomDateEditor dateEditor = new CustomDateEditor(df, true);
+    //     binder.registerCustomEditor(Date.class, dateEditor);
+    // }
+    //
     
     @ModelAttribute
     public void MyModelAttribute(Model model){

@@ -1,8 +1,10 @@
 package com.xzy.springmvc.demo.entity;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Data
 public class User {
@@ -11,4 +13,7 @@ public class User {
     private String name;
     
     private Integer age;
+    
+    @DateTimeFormat(pattern="yyyyMMdd")
+    private Date birthday;
 }
