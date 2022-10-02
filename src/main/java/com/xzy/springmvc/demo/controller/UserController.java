@@ -2,15 +2,22 @@ package com.xzy.springmvc.demo.controller;
 
 import com.xzy.springmvc.demo.entity.User;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@RestController
+@Controller
+@RequestMapping("user")
 public class UserController {
     
     @InitBinder
@@ -33,10 +40,15 @@ public class UserController {
         // o3 = user;
     }
     
-    
-    @RequestMapping("/user")
-    public User user(@RequestHeader("User-Agent") String agent) {
-        return null;
+    @ResponseBody
+    @RequestMapping("handle91")
+    public String handle91(@Valid User user, BindingResult bindingResult) {
+        System.out.println(user);
+        if(bindingResult.hasErrors()){
+            return "error";
+        }
+        return "ok";
     }
+    
     
 }
